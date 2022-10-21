@@ -8,12 +8,11 @@ on:
 
 jobs:
   excavate:
-    name: Excavate
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v3
-    - name: Excavate
-      uses: ScoopInstaller/GithubActions@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SKIP_UPDATED: '1'
+      - uses: actions/checkout@v3
+
+      - uses: ScoopInstaller/GithubActions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SKIP_UPDATED: '1'

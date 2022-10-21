@@ -1,17 +1,16 @@
-name: Handle Pull Request Comments
+name: Pull Request Comment Handler
 
 on:
   issue_comment:
     types: [ created ]
 
 jobs:
-  pullRequestHandler:
-    name: PullRequestHandler
+  pullRequestCommentHandler:
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v3
-    - name: PullRequestHandler
-      uses: ScoopInstaller/GithubActions@main
-      if: startsWith(github.event.comment.body, '/verify')
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+
+      - uses: ScoopInstaller/GithubActions@main
+        if: startsWith(github.event.comment.body, '/verify')
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

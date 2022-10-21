@@ -1,4 +1,4 @@
-name: Handle Issues
+name: Issue Hander
 
 on:
   issues:
@@ -6,12 +6,11 @@ on:
 
 jobs:
   issueHandler:
-    name: IssueHandler
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v3
-    - name: IssueHandler
-      uses: ScoopInstaller/GithubActions@main
-      if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+
+      - uses: ScoopInstaller/GithubActions@main
+        if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

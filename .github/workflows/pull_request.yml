@@ -1,4 +1,4 @@
-name: Handle Pull Requests
+name: Pull Request Handler
 
 on:
   pull_request:
@@ -6,11 +6,10 @@ on:
 
 jobs:
   pullRequestHandler:
-    name: PullRequestHandler
     runs-on: windows-2022
     steps:
-    - uses: actions/checkout@v3
-    - name: PullRequestHandler
-      uses: ScoopInstaller/GithubActions@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v3
+
+      - uses: ScoopInstaller/GithubActions@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
