@@ -1,7 +1,9 @@
+name: Handle Pull Requests
+
 on:
   pull_request:
     types: [ opened ]
-name: Pull Requests
+
 jobs:
   pullRequestHandler:
     name: PullRequestHandler

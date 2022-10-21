@@ -1,7 +1,9 @@
+name: Handle Issues
+
 on:
   issues:
     types: [ opened, labeled ]
-name: Issues
+
 jobs:
   issueHandler:
     name: IssueHandler
