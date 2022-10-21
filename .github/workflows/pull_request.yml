@@ -7,9 +7,9 @@ on:
 jobs:
   pullRequestHandler:
     name: PullRequestHandler
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
-    - uses: actions/checkout@main
+    - uses: actions/checkout@v3
     - name: PullRequestHandler
       uses: ScoopInstaller/GithubActions@main
       env:
