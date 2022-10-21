@@ -1,0 +1,61 @@
+{
+    "version": "0.13.16",
+    "description": "Idempotent schema management for MySQL, PostgreSQL, and more.",
+    "homepage": "https://github.com/k0kubun/sqldef",
+    "license": "MIT,Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": [
+                "https://github.com/k0kubun/sqldef/releases/download/v0.13.16/mssqldef_windows_amd64.zip",
+                "https://github.com/k0kubun/sqldef/releases/download/v0.13.16/mysqldef_windows_amd64.zip",
+                "https://github.com/k0kubun/sqldef/releases/download/v0.13.16/sqlite3def_windows_amd64.zip"
+            ],
+            "hash": [
+                "2d1b4a5e4f9e9b9952360787fec3fe92931b9ef8bd9446fae5431f3451eed699",
+                "3a2dd86d17bf847158e1327af2be9a39ab9f41d398178e51926244bf9628d9bf",
+                "6feb365a12a1aacdbc48304273e4aea3fd34debab31d1e9d0cbc9d09b0bb0234"
+            ]
+        },
+        "32bit": {
+            "url": [
+                "https://github.com/k0kubun/sqldef/releases/download/v0.13.16/mssqldef_windows_386.zip",
+                "https://github.com/k0kubun/sqldef/releases/download/v0.13.16/mysqldef_windows_386.zip",
+                "https://github.com/k0kubun/sqldef/releases/download/v0.13.16/sqlite3def_windows_386.zip"
+            ],
+            "hash": [
+                "daa36ec135ac91fa264061fbec427214da0acc0ea7a99db729f81ba8ff783d2f",
+                "b51aa36284d1a62f2d4bdad64d212d3db7040db2b8bf00e39cd4c306923150cb",
+                "87bfb9155f6bcb81a2f0679b64cb9ea3985c1db01e65936293d929800d53d887"
+            ]
+        }
+    },
+    "pre_install": [
+        "Rename-Item \"$dir\\mssqldef\" mssqldef.exe",
+        "Rename-Item \"$dir\\mysqldef\" mysqldef.exe",
+        "Rename-Item \"$dir\\sqlite3def\" sqlite3def.exe"
+    ],
+    "bin": [
+        "mssqldef.exe",
+        "mysqldef.exe",
+        "sqlite3def.exe"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": [
+                    "https://github.com/k0kubun/sqldef/releases/download/v$version/mssqldef_windows_amd64.zip",
+                    "https://github.com/k0kubun/sqldef/releases/download/v$version/mysqldef_windows_amd64.zip",
+                    "https://github.com/k0kubun/sqldef/releases/download/v$version/sqlite3def_windows_amd64.zip"
+                ]
+            },
+            "32bit": {
+                "url": [
+                    "https://github.com/k0kubun/sqldef/releases/download/v$version/mssqldef_windows_386.zip",
+                    "https://github.com/k0kubun/sqldef/releases/download/v$version/mysqldef_windows_386.zip",
+                    "https://github.com/k0kubun/sqldef/releases/download/v$version/sqlite3def_windows_386.zip"
+                ]
+            }
+        }
+    }
+}
