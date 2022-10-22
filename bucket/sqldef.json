@@ -29,11 +29,6 @@
             ]
         }
     },
-    "pre_install": [
-        "Rename-Item \"$dir\\mssqldef\" mssqldef.exe",
-        "Rename-Item \"$dir\\mysqldef\" mysqldef.exe",
-        "Rename-Item \"$dir\\sqlite3def\" sqlite3def.exe"
-    ],
     "bin": [
         "mssqldef.exe",
         "mysqldef.exe",
